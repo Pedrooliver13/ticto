@@ -1,3 +1,48 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "plugins": ["grouped-import"],
+  "rules": {
+    "@typescript-eslint/no-empty-object-type": "off",
+    "grouped-import/group": [
+      "warn",
+      {
+        "Packages": [
+          { "path": "react" },
+          { "path": "next" },
+          { "path": "date-fns" },
+          { "path": "vite" },
+          { "path": "immer" },
+          { "path": "styled-components" },
+          { "path": "react-router-dom" },
+          { "path": "@hookform" },
+          { "path": "zod" },
+          { "path": "date-fns" },
+          { "path": "axios" },
+          { "path": "phosphor-react" },
+          { "path": "use-context-selector" },
+          { "path": "@emotion" }
+        ],
+        "Routes": [{ "path": "router" }],
+        "Libs": [{ "path": "lib" }, { "path": "lib/axios" }],
+        "Pages": [{ "path": "pages/" }],
+        "Reducers": [{ "path": "reducers" }],
+        "Components": [{ "path": "components" }, { "path": "components/" }],
+        "Contexts": [{ "path": "contexts" }],
+        "Hooks": [{ "path": "hooks" }],
+        "Utils": [{ "path": "utils" }],
+        "Styles": [
+          { "path": "styles" },
+          { "path": ".css" },
+          { "path": ".styles" }
+        ],
+        "Assets": [
+          { "path": "assets" },
+          { "path": ".png" },
+          { "path": ".svg" },
+          { "path": ".jpg" },
+          { "path": ".ttf" }
+        ]
+      }
+    ]
+  }
 }
